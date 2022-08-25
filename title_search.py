@@ -1,13 +1,13 @@
 # -*- coding: utf-8 -*-
 
+import wget
 import requests
 from bs4 import BeautifulSoup
-from config import formatedlist, header, s_url
+from config import header, s_url
 
 
 def look_file(param):
     headers = header
-
     search_url = s_url
     search_param = param
     url = search_url + search_param
@@ -31,26 +31,30 @@ def look_file(param):
         final_dict = dict(zip(title_list, ref_list))
         return final_dict
 
-        # with open(f'{search_param}.txt', 'w', encoding='utf-8') as f:
-        #     for line in final_dict:
-        #         f.write(line + ' : ' + final_dict[line] + '\n')
-
     else:
         print('Connection ERROR')
 
 
-def fulllist_search():
-    for name in formatedlist:
-        look_file(name)
-
-
 def get_caption_title(link):
-    headers = header
-
-    r = requests.get(link, headers=headers)
+    r = requests.get(link, headers=header)
     if r.status_code == 200:
         soup = BeautifulSoup(r.text, 'lxml')
         caption_title = soup.find('div', {'class': 'b-sidecover'})
-        caption_title = caption_title.find('a').get('href')
+        caption_title = caption_title.find('img')
+        url = caption_title['src']
+        with open('caption_title.png', 'wb') as handle:
+            response = requests.get(url)
+            handle.write(response.content)
+    else:
+        pass
 
-        return caption_title
+
+def format_list():
+    f = open('list.txt', 'rt')  # File open
+    filmlist = [line.strip() for line in f]
+
+    formatedlist = []  # Getting actual names without numeration
+    for i in filmlist:
+        i = i.split('.')
+        formatedlist.append(i[1])
+    return formatedlist

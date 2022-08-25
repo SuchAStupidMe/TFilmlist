@@ -1,12 +1,3 @@
-#File management config
-f = open('list.txt', 'rt')  # File open
-filmlist = [line.strip() for line in f]
-
-formatedlist = []  # Getting actual names without numeration
-for i in filmlist:
-    i = i.split('.')
-    formatedlist.append(i[1])
-
 # Postgresql config
 host='localhost'
 user='postgres'
