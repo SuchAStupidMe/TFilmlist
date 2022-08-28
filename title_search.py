@@ -1,6 +1,5 @@
 # -*- coding: utf-8 -*-
 
-import wget
 import requests
 from bs4 import BeautifulSoup
 from config import header, s_url
@@ -35,7 +34,7 @@ def look_file(param):
         print('Connection ERROR')
 
 
-def get_caption_title(link):
+def get_caption_title_and_description(link):
     r = requests.get(link, headers=header)
     if r.status_code == 200:
         soup = BeautifulSoup(r.text, 'lxml')
@@ -45,6 +44,10 @@ def get_caption_title(link):
         with open('caption_title.png', 'wb') as handle:
             response = requests.get(url)
             handle.write(response.content)
+
+        description = soup.find('div', {'class': 'b-post__description_text'}).text
+        return description
+
     else:
         pass
 

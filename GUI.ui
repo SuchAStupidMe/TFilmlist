@@ -7,7 +7,7 @@
     <x>0</x>
     <y>0</y>
     <width>805</width>
-    <height>611</height>
+    <height>618</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,26 +17,13 @@
    <property name="styleSheet">
     <string notr="true">background-color:rgb(184, 255, 234)</string>
    </property>
-   <widget class="QLabel" name="label_2">
-    <property name="geometry">
-     <rect>
-      <x>60</x>
-      <y>0</y>
-      <width>61</width>
-      <height>16</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string>Ваш список</string>
-    </property>
-   </widget>
    <widget class="QWidget" name="formLayoutWidget">
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>320</y>
+      <y>307</y>
       <width>351</width>
-      <height>268</height>
+      <height>281</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -82,7 +69,7 @@
     <property name="geometry">
      <rect>
       <x>210</x>
-      <y>290</y>
+      <y>550</y>
       <width>111</width>
       <height>44</height>
      </rect>
@@ -123,7 +110,7 @@
     <property name="geometry">
      <rect>
       <x>680</x>
-      <y>20</y>
+      <y>10</y>
       <width>121</width>
       <height>16</height>
      </rect>
@@ -132,27 +119,11 @@
      <string>Python 3.9; PostgreSQL</string>
     </property>
    </widget>
-   <widget class="QLabel" name="label_image">
-    <property name="geometry">
-     <rect>
-      <x>210</x>
-      <y>20</y>
-      <width>211</width>
-      <height>261</height>
-     </rect>
-    </property>
-    <property name="text">
-     <string/>
-    </property>
-    <property name="scaledContents">
-     <bool>true</bool>
-    </property>
-   </widget>
    <widget class="QListWidget" name="import_list">
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>50</y>
+      <y>30</y>
       <width>351</width>
       <height>261</height>
      </rect>
@@ -162,7 +133,7 @@
     <property name="geometry">
      <rect>
       <x>450</x>
-      <y>20</y>
+      <y>10</y>
       <width>111</width>
       <height>16</height>
      </rect>
@@ -174,37 +145,137 @@
    <widget class="QPushButton" name="import_button">
     <property name="geometry">
      <rect>
-      <x>590</x>
-      <y>20</y>
+      <x>580</x>
+      <y>10</y>
       <width>75</width>
-      <height>23</height>
+      <height>20</height>
      </rect>
     </property>
     <property name="text">
      <string>Імпорт</string>
     </property>
    </widget>
-   <widget class="QListWidget" name="your_list">
+   <widget class="QWidget" name="verticalLayoutWidget">
     <property name="geometry">
      <rect>
       <x>10</x>
-      <y>20</y>
-      <width>191</width>
-      <height>561</height>
+      <y>10</y>
+      <width>181</width>
+      <height>581</height>
      </rect>
+    </property>
+    <layout class="QVBoxLayout" name="verticalLayout_2">
+     <item>
+      <widget class="QLabel" name="label_2">
+       <property name="text">
+        <string>Ваш список</string>
+       </property>
+       <property name="alignment">
+        <set>Qt::AlignCenter</set>
+       </property>
+      </widget>
+     </item>
+     <item>
+      <widget class="QListWidget" name="your_list">
+       <property name="frameShape">
+        <enum>QFrame::StyledPanel</enum>
+       </property>
+      </widget>
+     </item>
+    </layout>
+   </widget>
+   <widget class="QLabel" name="label_6">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>310</y>
+      <width>219</width>
+      <height>16</height>
+     </rect>
+    </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16</height>
+     </size>
+    </property>
+    <property name="text">
+     <string>Опис</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="label_image">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>30</y>
+      <width>221</width>
+      <height>271</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
     </property>
    </widget>
    <widget class="QLabel" name="label_5">
     <property name="geometry">
      <rect>
-      <x>270</x>
-      <y>0</y>
-      <width>101</width>
+      <x>210</x>
+      <y>10</y>
+      <width>219</width>
       <height>16</height>
      </rect>
     </property>
+    <property name="maximumSize">
+     <size>
+      <width>16777215</width>
+      <height>16</height>
+     </size>
+    </property>
     <property name="text">
      <string>Обкладинка фільму</string>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignCenter</set>
+    </property>
+   </widget>
+   <widget class="QLabel" name="description_label">
+    <property name="geometry">
+     <rect>
+      <x>210</x>
+      <y>330</y>
+      <width>221</width>
+      <height>211</height>
+     </rect>
+    </property>
+    <property name="frameShape">
+     <enum>QFrame::Box</enum>
+    </property>
+    <property name="text">
+     <string/>
+    </property>
+    <property name="textFormat">
+     <enum>Qt::AutoText</enum>
+    </property>
+    <property name="scaledContents">
+     <bool>true</bool>
+    </property>
+    <property name="alignment">
+     <set>Qt::AlignLeading|Qt::AlignLeft|Qt::AlignTop</set>
+    </property>
+    <property name="wordWrap">
+     <bool>true</bool>
+    </property>
+    <property name="margin">
+     <number>0</number>
     </property>
    </widget>
   </widget>
